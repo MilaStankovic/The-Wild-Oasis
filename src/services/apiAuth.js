@@ -1,5 +1,40 @@
 import supabase from "./supabase";
 
+// export async function signup({ fullName, email, password }) {
+//     const { data, error } = await supabase.auth.signUp({
+//         email, password, options: {
+//             data: {
+//                 fullName,
+//                 avatar: "",
+//             }
+//         }
+//     });
+
+//     if (error) throw new Error(error.message);
+
+//     return data;
+// }
+
+export async function signup({ fullName, email, password }) {
+    const cleanEmail = String(email ?? "").trim().toLowerCase();
+    const cleanPassword = String(password ?? "").trim();
+    const cleanFullName = String(fullName ?? "").trim();
+
+    const { data, error } = await supabase.auth.signUp({
+        email: cleanEmail,
+        password: cleanPassword,
+        options: {
+            data: {
+                fullName: cleanFullName,
+                avatar: "",
+            },
+        },
+    });
+
+    if (error) throw new Error(error.message);
+    return data;
+}
+
 export async function login({ email, password }) {
     let { data, error } = await supabase.auth.signInWithPassword({
         email,

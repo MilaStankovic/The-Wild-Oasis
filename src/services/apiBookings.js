@@ -83,6 +83,15 @@ export async function getStaysAfterDate(date) {
 
 // Activity means that there is a check in or a check out today
 export async function getStaysTodayActivity() {
+  // const today = new Date().toISOString();
+  // const { data, error } = await supabase
+  //   .from("bookings")
+  //   .select("*, guests(fullName, nationality, countryFlag)")
+  //   .or(
+  //     `and(status.eq.unconfirmed,startDate.eq.${today}),and(status.eq.checked-in,endDate.eq.${today})`
+  //   )
+  //   .order("created_at");
+
   const { data, error } = await supabase
     .from("bookings")
     .select("*, guests(fullName, nationality, countryFlag)")

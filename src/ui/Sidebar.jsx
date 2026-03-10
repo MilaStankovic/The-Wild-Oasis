@@ -13,10 +13,13 @@ display: flex;
 flex-direction: column;
 gap: 3.2rem;
 
-/* @media (max-width: 768px) {
+ @media (max-width: 768px) {
+    grid-row: auto;
     padding: 1.6rem;
     gap: 1.6rem;
-  } */
+    border-right: none;
+    border-bottom: 1px solid var(--color-grey-100);
+  }
 `;
 
 function Sidebar() {

@@ -41,6 +41,7 @@ const Main = styled.main`
 
 const Container = styled.div`
     max-width: 120rem;
+    width: 100%; //added this for rsponsive 
     margin: 0 auto;
     display: flex;
     flex-direction: column;

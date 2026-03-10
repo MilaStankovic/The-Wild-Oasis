@@ -12,6 +12,11 @@ grid-row: 1 / -1;
 display: flex;
 flex-direction: column;
 gap: 3.2rem;
+
+/* @media (max-width: 768px) {
+    padding: 1.6rem;
+    gap: 1.6rem;
+  } */
 `;
 
 function Sidebar() {

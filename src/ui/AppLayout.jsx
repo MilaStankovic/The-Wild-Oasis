@@ -3,17 +3,40 @@ import Header from "./Header"
 import Sidebar from "./Sidebar"
 import styled from "styled-components"
 
+// const StyledAppLayout = styled.div`
+// display: grid;
+// grid-template-columns: 26rem 1fr;
+// grid-template-rows: auto 1fr;
+// height: 100vh;
+// `;
+
 const StyledAppLayout = styled.div`
-display: grid;
-grid-template-columns: 26rem 1fr;
-grid-template-rows: auto 1fr;
-height: 100vh;
+  display: grid;
+  grid-template-columns: 26rem 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
 `;
 
+// const Main = styled.main`
+// background-color: var(--color-grey-50);
+// padding: 4rem 4.8rem 6.4rem;
+// overflow: scroll;
+// `;
+
 const Main = styled.main`
-background-color: var(--color-grey-50);
-padding: 4rem 4.8rem 6.4rem;
-overflow: scroll;
+  background-color: var(--color-grey-50);
+  padding: 4rem 4.8rem 6.4rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    padding: 2.4rem 1.6rem 3.2rem;
+  }
 `;
 
 const Container = styled.div`

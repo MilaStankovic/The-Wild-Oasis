@@ -1,7 +1,19 @@
 import styled, { css } from "styled-components";
 
+// const Row = styled.div`
+// display: flex;
+
 const Row = styled.div`
-display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
 
 ${props => props.type === "horizontal" && css`
 justify-content:space-between;

@@ -15,17 +15,36 @@ import TodayActivity from "../check-in-out/TodayActivity";
 //   gap: 2.4rem;
 // `;
 
+// const StyledDashboardLayout = styled.div`
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   gap: 2.4rem;
+
+//   @media (max-width: 1024px) {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+
+//   @media (max-width: 768px) {
+//     grid-template-columns: 1fr;
+//   }
+// `;
+
 const StyledDashboardLayout = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2.4rem;
+  align-items: start;
 
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
+  & > * {
+    min-width: 0;
   }
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: minmax(0, 1fr);
   }
 `;
 

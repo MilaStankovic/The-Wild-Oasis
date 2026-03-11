@@ -13,7 +13,7 @@ align-items: center;
 justify-content: flex-end; */
 
 display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 
   @media (max-width: 768px) {
